@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/login', loginController);
-app.use('/management/ca', /*authenticateToken,*/ caController)
+app.use('/management/ca', authenticateToken, caController)
 app.use('/load/ca',  caLoadController)
 app.use('/merchArticles', merchController);
 app.use('/management/item', itemhController)
