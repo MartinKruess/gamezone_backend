@@ -22,11 +22,14 @@ app.get('/', (req, res) => {
     res.send('<h1>This is just a test!</h1>');
 });
 
-app.use('/login', loginController);
-app.use('/management/ca', authenticateToken, caController)
+// Open API
 app.use('/load/ca',  caLoadController)
 app.use('/merchArticles', merchController);
-app.use('/management/item', itemhController)
+
+// Management API
+app.use('/login', loginController);
+app.use('/management/ca', authenticateToken, caController)
+app.use('/management/item', authenticateToken, itemhController)
 
 app.use((req, res, next) => {
     res.status(404).json;
