@@ -28,8 +28,8 @@ app.use('/merchArticles', merchController);
 
 // Management API
 app.use('/login', loginController);
-app.use('/management/ca', authenticateToken, caController)
-app.use('/management/item', authenticateToken, itemhController)
+app.use('/management/ca', /*authenticateToken,*/ caController)
+app.use('/management/item', /*authenticateToken,*/ itemhController)
 
 app.use((req, res, next) => {
     res.status(404).json;
