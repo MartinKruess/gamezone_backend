@@ -6,7 +6,7 @@ export const caController = async (req, res) => {
     
     try {
         const newArticle = req.body
-        CaDataModel(newArticle).save()
+        CaDataModel.create(newArticle)
         console.log("CA-Article Saved!")
     } catch (error) {
         res.send("ERROR:", error)

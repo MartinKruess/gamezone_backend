@@ -6,7 +6,8 @@ import { authenticateToken } from './security/jwt_auth.js';
 import { caController } from './controller/caController.js';
 import { caLoadController } from './controller/caLoadController.js';
 import { merchController } from './controller/merchController.js';
-import { itemhController } from './controller/itemController.js';
+import { itemController } from './controller/itemController.js';
+
 
 const app = express();
 
@@ -29,7 +30,8 @@ app.use('/merchArticles', merchController);
 // Management API
 app.use('/login', loginController);
 app.use('/management/ca', /*authenticateToken,*/ caController)
-app.use('/management/item', /*authenticateToken,*/ itemhController)
+app.use('/management/item', /*authenticateToken,*/ itemController)
+
 
 app.use((req, res, next) => {
     res.status(404).json;

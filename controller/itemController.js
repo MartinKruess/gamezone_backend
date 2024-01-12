@@ -1,6 +1,6 @@
 import ItemModel from "../schemas/itemSchema.js";
 
-export const itemhController = async (req, res) => {
+export const itemController = async (req, res) => {
     console.log('Upload Merch... ');
     
     try {
