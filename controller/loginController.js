@@ -9,7 +9,6 @@ export const loginController = async (req, res) => {
 
     //Find: userData in userDB
     admin = await AdminDataModel.findOne({username: req.body.username});
-    console.log("admin ohne PW", admin)
 
     if(!admin.password){
         const saltRounds = 10;
@@ -29,7 +28,7 @@ export const loginController = async (req, res) => {
             req.body.password,
             admin.password
         );
-
+        console.log('isLogedIn:', isLogedIn);
         if (isLogedIn === false) return;
         
         console.log(admin)

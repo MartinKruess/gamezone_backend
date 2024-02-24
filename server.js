@@ -13,16 +13,14 @@ const app = express();
 
 app.use(cors(
     {
-        origin: 'http://localhost:3000',
+        origin: 'https://raikuns-gamezone.netlify.app/',
+        accessControll: true,
         credentials: true
     }
 ));
 app.use(express.json({limit: '3MB'}));
 
 const PORT = process.env.PORT || 5500;
-app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
-});
 
 app.get('/', (req, res) => {
     res.send('<h1>This is just a test!</h1>');
@@ -40,4 +38,8 @@ app.use('/management/item', /*authenticateToken,*/ itemController)
 
 app.use((req, res, next) => {
     res.status(404).json;
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on http://localhost:${PORT}`);
 });
