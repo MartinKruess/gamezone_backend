@@ -12,8 +12,9 @@ import { itemController } from './controller/itemController.js';
 const app = express();
 
 app.use(cors({
-        origin: 'https://raikuns-gamezone.netlify.app/',
-        credentials: true
+    origin: 'https://raikuns-gamezone.netlify.app/',
+    content: 'application/json',
+    credentials: true
 }));
 
 app.use(express.json({limit: '3MB'}));
