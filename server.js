@@ -14,7 +14,6 @@ const app = express();
 app.use(cors(
     {
         origin: 'https://raikuns-gamezone.netlify.app/',
-        accessControll: true,
         credentials: true
     }
 ));
