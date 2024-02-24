@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: 'https://raikuns-gamezone.netlify.app/' || "http://localhost:5173",
+        origin: 'https://raikuns-gamezone.netlify.app/' | "http://localhost:5173",
         accessControll: true,
         credentials: true
     }
