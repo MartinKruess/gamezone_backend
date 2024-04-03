@@ -12,7 +12,7 @@ import { itemController } from './controller/itemController.js';
 const app = express();
 
 app.use(cors({
-    origin: 'https://raikuns-gamezone.netlify.app/',
+    origin: 'https://raikuns-gamezone.netlify.app',
     content: 'application/json',
     credentials: true
 }));
